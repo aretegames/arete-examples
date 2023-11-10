@@ -22,7 +22,7 @@ You may now choose any project directory, such as `space-cpp/`, and execute the 
 
 ### Tanks
 
-
+<img src="assets/tanks.jpg" height="200">
 
 ### Space
 
