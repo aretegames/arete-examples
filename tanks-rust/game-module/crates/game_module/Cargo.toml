@@ -1,0 +1,18 @@
+[package]
+name = "game_module"
+version = "0.0.0"
+edition = "2021"
+
+[dependencies]
+c_str_macro = "1.0.3"
+nalgebra-glm = "0.17.0"
+noise = "0.8.2"
+
+arete_public = { path = "../arete_public" }
+game_module_macro = { path = "../game_module_macro" }
+
+[build-dependencies]
+syn = { version = "2.0.22", features = ["full", "extra-traits"] }
+
+[lib]
+crate-type = ["cdylib"]
