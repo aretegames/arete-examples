@@ -26,4 +26,4 @@ You may now choose any project directory, such as `space-cpp/`, and execute the 
 
 ### Space
 
-![space screenshot](assets/space.jpg)
+![space screenshot](assets/space.jpg =320x)
