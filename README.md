@@ -22,8 +22,14 @@ You may now choose any project directory, such as `space-cpp/`, and execute the 
 
 ### Tanks
 
-<img src="assets/tanks.jpg" height="200">
+<img src="assets/tanks.jpg" height="320">
+
+This demo is copied almost exactly from Unity's DOTS [tanks tutorial](https://github.com/Unity-Technologies/EntityComponentSystemSamples/blob/master/EntitiesSamples/Assets/Tutorials/Tanks/README.md). It is the simplest example to dive into, so we recommend starting here!
+
+The demo simulates a number of tanks with random movement, each firing a cannonball once per frame. There is also a player-controlled tank, which is moved with WASD and fires when the spacebar is pressed.
 
 ### Space
 
 <img src="assets/space.jpg" width="200">
+
+Inspired by old Galaga/Space Invaders shoot'em up games crossed with the infamous Age of Origins ads, this demo is a more complex, but more representative example of a complete game. Enemies spawn in waves, moving down the screen towards the player. The player may collect powerups which adds allies, each with a randomized laser or grenade-type weapon. 
