@@ -1,0 +1,9 @@
+[package]
+name = "arete_public"
+version = "0.0.0"
+edition = "2021"
+
+[dependencies]
+nalgebra-glm = "0.17.0"
+
+game_module_macro = { path = "../game_module_macro" }

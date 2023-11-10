@@ -1,0 +1,10 @@
+.DS_Store
+.vscode
+arete/
+arete-cpp/
+arete-ios/
+xcuserdata/
+target/
+build/
+build-ios/
+
