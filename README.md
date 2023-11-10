@@ -32,4 +32,8 @@ The demo simulates a number of tanks with random movement, each firing a cannonb
 
 <img src="assets/space.jpg" width="200">
 
-Inspired by old Galaga/Space Invaders shoot'em up games crossed with the infamous Age of Origins ads, this demo is a more complete game example. Enemies spawn in waves, moving down the screen towards the player. The player may collect powerups which adds allies, each with a randomized laser or grenade-type weapon. Waves steadily become more challenging.
+Inspired by old Galaga/Space Invaders shoot'em up games crossed with the infamous Age of Origins ads, this demo is a more complete game example.
+
+Enemies spawn in waves, moving down the screen towards the player. Waves steadily become more challenging, with more enemies and varied enemy types. The player may collect powerups which adds allies, each with a randomized laser or grenade-type weapon. There are also special powerups, which add health or wipe the entire screen of enemies.
+
+The game area is designed to be played in portrait mode on a mobile device.
