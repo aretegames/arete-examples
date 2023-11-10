@@ -600,7 +600,7 @@ SYSTEM(player_movement,
         // set rotation (slerp, for smooth rotation)
 
         player.tilt_angle += (old_x - transform.position.x) * 0.1f;
-        player.tilt_angle *= std::powf(0.005f, constants.delta_time);
+        player.tilt_angle *= std::pow(0.005f, constants.delta_time);
 
         transform.rotation = glm::quat(glm::vec3(0.f, 0.f, player.tilt_angle));
     });
@@ -642,7 +642,7 @@ SYSTEM(spawn_enemies,
         const AssetId enemy_asset_id = engine.load_asset(enemy_desc->asset_path);
 
         const float expected_spawns = enemy_desc->spawn_rate * constants.delta_time;
-        const int spawn_count = (int)expected_spawns + (randf() < std::fmodf(expected_spawns, 1.f) ? 1 : 0);
+        const int spawn_count = (int)expected_spawns + (randf() < std::fmod(expected_spawns, 1.f) ? 1 : 0);
 
         for (int i = 0; i < spawn_count; i++) {
             spawn_enemy(engine, enemy_asset_id, *enemy_desc);
@@ -674,7 +674,7 @@ SYSTEM(update_enemies,
         ) {
             const float opp = transform.position.x - homing_transform->position.x;
             const float adj = transform.position.z - homing_transform->position.z;
-            const float target_angle = std::atanf(opp / adj);
+            const float target_angle = std::atan(opp / adj);
 
             if (target_angle > enemy.angle) {
                 enemy.angle = std::min(enemy.angle + enemy.turn_rate * constants.delta_time, target_angle);
@@ -811,7 +811,7 @@ SYSTEM(update_lasers,
             const EntityId& enemy_entity_id
         ) {
             // check horizontal distance
-            if (std::fabsf(enemy_transform.position.x - transform.position.x) > LASER_DAMAGE_RADIUS) {
+            if (std::fabs(enemy_transform.position.x - transform.position.x) > LASER_DAMAGE_RADIUS) {
                 return;
             }
 
@@ -1300,8 +1300,8 @@ SYSTEM(update_score,
     const float char_width = 1.f; // from the mesh
 
     const glm::vec3 offset_local{
-        std::tanf(camera->fov / 2.f - 0.1f) * (aspect.x / aspect.y) * 2.f,
-        std::tanf(camera->fov / 2.f - 0.1f) * 2.f,
+        std::tan(camera->fov / 2.f - 0.1f) * (aspect.x / aspect.y) * 2.f,
+        std::tan(camera->fov / 2.f - 0.1f) * 2.f,
         -2.f,
     };
 
@@ -1330,7 +1330,7 @@ SYSTEM(update_score,
 //--------- helper function definitions
 
 Color color_from_hue(float hue) {
-    const float x = 1.f - fabsf(fmodf(hue / 60.f, 2.f) - 1.f);
+    const float x = 1.f - std::fabs(std::fmod(hue / 60.f, 2.f) - 1.f);
 
     if (hue < 60.f) {
         return {{ 1.f, x, 0.f }};
@@ -1367,8 +1367,8 @@ glm::vec3 screen_position_to_world(
     const float screen_y = -(screen_position.y - 0.5f) * 2.f;
 
     const glm::vec3 ray_dir_local{
-        std::atanf(std::tanf(fov / 2.f) * (aspect.x / aspect.y) * screen_x),
-        std::atanf(std::tanf(fov / 2.f) * screen_y),
+        std::atan(std::tan(fov / 2.f) * (aspect.x / aspect.y) * screen_x),
+        std::atan(std::tan(fov / 2.f) * screen_y),
         -1.f
     };
 
