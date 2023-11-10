@@ -26,4 +26,4 @@ You may now choose any project directory, such as `space-cpp/`, and execute the 
 
 ### Space
 
-![space screenshot](assets/space.jpg =320x)
+<img src="assets/space.jpg" width="200">
