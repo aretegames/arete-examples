@@ -5,5 +5,6 @@ cmake --build build --config Release
 
 if errorlevel 1 goto failed
     xcopy /y build\Release\game_module.dll ..\arete\modules\
+    xcopy /y /d res\ ..\arete\res\
     ..\arete\game_client.exe
 :failed
